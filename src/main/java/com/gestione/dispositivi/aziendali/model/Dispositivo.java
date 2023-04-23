@@ -2,7 +2,6 @@ package com.gestione.dispositivi.aziendali.model;
 
 import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -16,7 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "dipendenti")
+@Table(name = "dispositivi")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -24,11 +23,10 @@ public class Dispositivo {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	@Column(nullable = false, unique = true)
 	@Enumerated(EnumType.STRING)
-	private StatoDispositivo statodisp;
+	private StatoDispositivo statoDisp;
 	@Enumerated(EnumType.STRING)
-	private TipoDispositivo tipodisp;
+	private TipoDispositivo tipoDisp;
 	@ManyToMany
 	private List<Dipendente> lista_dipendenti;
 	

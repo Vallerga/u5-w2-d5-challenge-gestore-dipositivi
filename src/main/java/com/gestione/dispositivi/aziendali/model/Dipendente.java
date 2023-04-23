@@ -14,24 +14,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "dipendenti")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "dipendenti")
 public class Dipendente {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	@Column(nullable = false, unique = true)
-	private String username;
-	@Column(nullable = false)
-	private String nome;
-	@Column(nullable = false)
-	private String cognome;
-	@Column(nullable = false, unique = true)
-	private String email;
-	@Column(nullable = false)
-	private String password;
-	@ManyToMany
-	private List<Dispositivo> lista_dispositivi;
+    @Column(nullable = false, unique = true)
+    private String username;
+    @Column(nullable = false)
+    private String nome;
+    @Column(nullable = false)
+    private String cognome;
+    @Column(nullable = false, unique = true)
+    private String email;
+    @Column(nullable = false)
+    private String password;
+
+    @ManyToMany
+    private List<Dispositivo> lista_dispositivi;
+
 }
