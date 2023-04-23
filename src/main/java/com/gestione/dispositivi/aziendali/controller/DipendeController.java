@@ -47,11 +47,13 @@ public class DipendeController {
 	    @PostMapping
 	    public ResponseEntity<?> createDipendente(@RequestBody Dipendente dipendente) {
 		return new ResponseEntity<Dipendente>(service.createDipendente(dipendente), HttpStatus.CREATED);
+
 	    }
 
 	    @PutMapping("/dipendente/{id}")
 	    public ResponseEntity<?> putDipendente(@RequestBody Dipendente dipendente) {
 		return new ResponseEntity<Dipendente>(service.putDipendente(dipendente), HttpStatus.CREATED);
+
 	    }
 
 }
